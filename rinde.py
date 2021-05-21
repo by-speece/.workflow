@@ -1,11 +1,13 @@
+#Import 
 import os
 import pyfiglet
 
+#Default
 current = set()
 
+#Shortcut
 def clear():
   os.system('clear')
-
 def Rinde():
     rinde = pyfiglet.figlet_format("RINDE v0.4", font = "slant")
     print(rinde)
@@ -19,6 +21,7 @@ def GlobalMenu():
     print("q | Quit")
     print("---------------------------------------------------------")
 
+#Code of Program
 def Main():
     clear()
     Rinde()
@@ -68,10 +71,8 @@ def Main():
             Main()
     if MainInput == "2": #Install apps with configs
         clear()
-
     if MainInput == "3": #Extra Scripts
         clear()
-
     if MainInput == "4": #Rinde Settings
         clear()
         Rinde()
@@ -100,10 +101,12 @@ def Main():
             exit()
     if MainInput == "5": #Power Manager
         clear()
-    if MainInput == "b":
+    if MainInput == "b": #Classic Function
         Main()
-    if MainInput == "q":
+    if MainInput == "q": #Classic Function
         exit()
-    else:
+    else: #User is idiot 
         Main()
-Main()
+
+
+Main() #Start Apki
