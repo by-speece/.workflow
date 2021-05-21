@@ -9,20 +9,20 @@ current = set()
 def clear():
   os.system('clear')
 def Rinde():
-    rinde = pyfiglet.figlet_format("RINDE v0.4", font = "slant")
+    rinde = pyfiglet.figlet_format("pyRINDE v0.4", font = "slant")
     print(rinde)
-    print("---------------------------------------------------------")
+    print("------------------------------------------------------------")
     print("Author: Szymon 'by-speece' Gałka 2020-2021")
-    print("Codename: Fresh May | Build 03052021 | Version:0.4-stable")
-    print("---------------------------------------------------------")
+    print("Codename: Fresh May | Build 21052021 | Version:0.5-testing")
+    print("------------------------------------------------------------")
 def GlobalMenu():
-    print("---------------------------------------------------------")
+    print("------------------------------------------------------------")
     print("b | Back to Main Menu")
     print("q | Quit")
-    print("---------------------------------------------------------")
+    print("------------------------------------------------------------")
 
 #Code of Program
-def Main():
+def Main(): #Main Code of Program
     clear()
     Rinde()
     print("1 | Package Manager")
@@ -30,6 +30,7 @@ def Main():
     print("3 | Extra Scripts")
     print("4 | Rinde Settings")
     print("5 | Power Manager")
+    print("6 | Android USB Install")
     GlobalMenu()
 
     MainInput = input("Command: ")
@@ -85,11 +86,16 @@ def Main():
         RindeInput = input("Command: ")
         if RindeInput == "1": #Packages Pack
             clear()
-        Rinde()
+            Rinde()
         if RindeInput == "2": #Drivers Pack
             clear()
             Rinde()
         if RindeInput == "3": #Install Rice
+            os.system('sudo pacman -Syu i3-gaps cups cups-pdf avahi gutenprint foomatic-db-gutenprint-ppds papirus-icon-theme wget curl libreoffice-fresh libreoffice-fresh-pl gedit repose zsh firefox thunderbird mpv youtube-dl discord calibre audacity screenkey obs-studio scribus krita rawtherapee htop gtop adapta-gtk-theme syncthing syncthing-gtk blueman bluez pavucontrol nautilus keepassxc dunst gnome-screenshot udiskie feh alacritty neofetch inkscape gimp xdotool light ttf-bitstream-vera ttf-croscore ttf-dejavu gnu-free-fonts adobe-source-han-sans-jp-fonts  adobe-source-han-serif-jp-fonts otf-ipafont ttf-hanazono ranger --needed')
+            os.system('sudo systemctl enable cups avahi-deamon.service ')
+            os.system('yay -S polybar brother-dcpj315w brscan3 clipit cava i3lock-color libinput-gestures picom-git pyinstaller rofi-bluetooth-git siji-git teams termsyn-font ttf-material-icons-git ttf-ms-fonts waifu2x-ncnn-vulkan-git wd719x-firmware xava-git --needed')
+            os.system('cp -rf /etc/pyRinde/Data/Rice/* ~/.config/*')
+            os.system('sudo chmod +s /usr/bin/light')
             clear()
             Rinde()
         if RindeInput == "4": #Install Yay-bin
@@ -100,6 +106,8 @@ def Main():
         if RindeInput == "q": #Quit
             exit()
     if MainInput == "5": #Power Manager
+        clear()
+    if MainInput == "6": #Android Install
         clear()
     if MainInput == "b": #Classic Function
         Main()
