@@ -13,7 +13,7 @@ def Rinde():
     print(rinde)
     print("------------------------------------------------------------")
     print("Author: Szymon 'by-speece' Gałka 2020-2021")
-    print("Codename: Fresh May | Build 21052021 | Version:0.5-testing")
+    print("Codename: Fresh May | Build 22052021 | Version:0.5.4-testing")
     print("------------------------------------------------------------")
 def GlobalMenu():
     print("------------------------------------------------------------")
@@ -92,13 +92,13 @@ def Main(): #Main Code of Program
             Rinde()
         if RindeInput == "3": #Install Rice
             os.system('sudo pacman -Syu i3-gaps cups cups-pdf avahi gutenprint foomatic-db-gutenprint-ppds papirus-icon-theme wget curl libreoffice-fresh libreoffice-fresh-pl gedit repose zsh firefox thunderbird mpv youtube-dl discord calibre audacity screenkey obs-studio scribus krita rawtherapee htop gtop adapta-gtk-theme syncthing blueman bluez pavucontrol nautilus keepassxc dunst gnome-screenshot udiskie feh alacritty neofetch inkscape gimp xdotool light ttf-bitstream-vera ttf-croscore ttf-dejavu gnu-free-fonts adobe-source-han-sans-jp-fonts  adobe-source-han-serif-jp-fonts otf-ipafont ttf-hanazono ranger lxappearance-gtk3 --needed')
-            os.system('sudo systemctl enable cups avahi-deamon.service ')
             os.system('yay -S polybar brother-dcpj315w brscan3 clipit cava i3lock-color libinput-gestures picom-git pyinstaller rofi-bluetooth-git siji-git teams termsyn-font ttf-material-icons-git ttf-ms-fonts waifu2x-ncnn-vulkan-git wd719x-firmware xava-git --needed')
             os.system('cp -rf /etc/pyRinde/Data/Rice/* ~/.config/*')
             os.system('sudo chmod +s /usr/bin/light')
             clear()
             Rinde()
         if RindeInput == "4": #Install Yay-bin
+            os.system('sh Data/Bash/yay-bin.sh')
             clear()
             Rinde()
         if RindeInput == "b": #Back to Main Menu
@@ -113,8 +113,8 @@ def Main(): #Main Code of Program
         Main()
     if MainInput == "q": #Classic Function
         exit()
-    else: #User is idiot 
+    else: #User is just idiot 
         Main()
 
 
-Main() #Start Apki
+Main() #Start
