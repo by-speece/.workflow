@@ -309,9 +309,9 @@ exec --no-startup-id udiskie
 #Taping on touchpad
 exec --no-startup-id xinput set-prop "Elan Touchpad" "libinput Tapping Enabled" 1
 
-#Autorun
-exec_always --no-startup-id sh ~/.tools.d/service_always.sh
-exec --no-startup-id ~/.tools.d/service.sh
+#Picom
+exec --no-startup-id picom --experimental-backend --backend glx
+
 #Workspace for left screen
 workspace $ws0 output HDMI-0
 #Workspace for Right Screen
