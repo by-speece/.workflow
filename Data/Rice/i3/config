@@ -301,7 +301,7 @@ bindsym $mod+k [class="Signal"] scratchpad show; [class="Signal"] move position 
 exec --no-startup-id libinput-gestures-setup start
 
 #Wallpaper
-exec_always --no-startup-id feh --bg-fill ~/.tools/config/Wallpapers/Wallpaper.png
+exec_always --no-startup-id feh --bg-fill ~/.pyrinde-user/Wallpaper/Wallpaper.png
 
 #Automatic Mount
 exec --no-startup-id udiskie
