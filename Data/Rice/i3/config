@@ -273,7 +273,7 @@ for_window [class="Blueman-manager"] floating enable
 for_window [class="Blueman-manager"] resize set 800 600
 for_window [class="Blueman-manager"] move position center
 
-#Rythmbox
+#Sublime-Music
 exec --no-startup-id sublime-music
 for_window [class="Sublime-music"] move scratchpad
 for_window [class="Sublime-music"] floating enable
