@@ -113,21 +113,21 @@ def Main(): #Main Code of Program
             print("4 | Close Laptop Lid no suspend")
             GlobalMenu()
             PatchInput = input("Command: ")
-            if PatchInput = "1": #HD Patch
+            if PatchInput == "1": #HD Patch
                 os.system('cp -rf ~/.pyRinde/DataPatch/PatchHD/*   ~/.config/')
                 clear()
                 Main()
-            if PatchInput = "2": #RTL8821CE Patch
+            if PatchInput == "2": #RTL8821CE Patch
                 os.system('sudo cp -rf ~/.pyRinde/DataPatch/RTL8821CE/rtw88_blacklist.conf /etc/modprobe.d')
                 os.system('sudo pacman -Syu dkms linux-headers --needed --noconfirm')
                 os.system('yay -S rtl8821ce-dkms-git')
                 clear()
                 Main()
-            if PatchInput = "3": #NoBeep Patch
+            if PatchInput == "3": #NoBeep Patch
                 os.system('sudo cp -rf ~/.pyRinde/DataPatch/NoBeep/nobeep.conf  /etc/modprobe.d')
                 clear()
                 Main()
-            if PatchInput = "4": #Close Laptop Lid Patch
+            if PatchInput == "4": #Close Laptop Lid Patch
                 os.system('sudo cp -rf ~/.pyRinde/DataPatch/LaptopLid/logind.conf   /etc/systemd/')
         if RindeInput == "b": #Back to Main Menu
             Main()
