@@ -30,7 +30,6 @@ def Main(): #Main Code of Program
     print("3 | Extra Scripts")
     print("4 | Rinde Settings")
     print("5 | Power Manager")
-    print("6 | Android USB Install")
     GlobalMenu()
 
     MainInput = input("Command: ")
@@ -82,7 +81,7 @@ def Main(): #Main Code of Program
         print("2 | Drivers Pack")
         print("3 | Install Rice")
         print("4 | Install Yay-bin")
-        print("5 | HD Screen Patch")
+        print("5 | Patch Menu")
         GlobalMenu()
         RindeInput = input("Command: ")
         if RindeInput == "1": #Packages Pack
@@ -104,17 +103,37 @@ def Main(): #Main Code of Program
             os.system('sh Data/Bash/yay-bin.sh')
             clear()
             Rinde()
-        if RindeInput == "5": #HD Screen
-            os.system('cp -rf ~/.pyRinde/DataPatch/PatchHD/*   ~/.config/')
+        if RindeInput == "5": #Patch Menu
             clear()
             Rinde()
+            print("# | Rinde Patch Menu ")
+            print("1 | HD Patch")
+            print("2 | RTL8821CE Patch")
+            print("3 | NoBeep Patch")
+            print("4 | Close Laptop Lid no suspend")
+            GlobalMenu()
+            PatchInput = input("Command: ")
+            if PatchInput = "1": #HD Patch
+                os.system('cp -rf ~/.pyRinde/DataPatch/PatchHD/*   ~/.config/')
+                clear()
+                Main()
+            if PatchInput = "2": #RTL8821CE Patch
+                os.system('sudo cp -rf ~/.pyRinde/DataPatch/RTL8821CE/rtw88_blacklist.conf /etc/modprobe.d')
+                os.system('sudo pacman -Syu dkms linux-headers --needed --noconfirm')
+                os.system('yay -S rtl8821ce-dkms-git')
+                clear()
+                Main()
+            if PatchInput = "3": #NoBeep Patch
+                os.system('sudo cp -rf ~/.pyRinde/DataPatch/NoBeep/nobeep.conf  /etc/modprobe.d')
+                clear()
+                Main()
+            if PatchInput = "4": #Close Laptop Lid Patch
+                os.system('sudo cp -rf ~/.pyRinde/DataPatch/LaptopLid/logind.conf   /etc/systemd/')
         if RindeInput == "b": #Back to Main Menu
             Main()
         if RindeInput == "q": #Quit
             exit()
     if MainInput == "5": #Power Manager
-        clear()
-    if MainInput == "6": #Android USB Install
         clear()
     if MainInput == "b": #Classic Function
         Main()
