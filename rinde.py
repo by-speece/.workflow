@@ -82,6 +82,7 @@ def Main(): #Main Code of Program
         print("2 | Drivers Pack")
         print("3 | Install Rice")
         print("4 | Install Yay-bin")
+        print("5 | HD Screen Patch")
         GlobalMenu()
         RindeInput = input("Command: ")
         if RindeInput == "1": #Packages Pack
@@ -101,6 +102,10 @@ def Main(): #Main Code of Program
             Rinde()
         if RindeInput == "4": #Install Yay-bin
             os.system('sh Data/Bash/yay-bin.sh')
+            clear()
+            Rinde()
+        if RindeInput == "5": #Compatible Layer for HD Screen
+            os.system('cp -rf ~/.pyRinde/Data/PatchHD/*   ~/.config/')
             clear()
             Rinde()
         if RindeInput == "b": #Back to Main Menu
