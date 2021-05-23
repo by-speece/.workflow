@@ -104,8 +104,8 @@ def Main(): #Main Code of Program
             os.system('sh Data/Bash/yay-bin.sh')
             clear()
             Rinde()
-        if RindeInput == "5": #Compatible Layer for HD Screen
-            os.system('cp -rf ~/.pyRinde/Data/PatchHD/*   ~/.config/')
+        if RindeInput == "5": #HD Screen
+            os.system('cp -rf ~/.pyRinde/DataPatch/PatchHD/*   ~/.config/')
             clear()
             Rinde()
         if RindeInput == "b": #Back to Main Menu
