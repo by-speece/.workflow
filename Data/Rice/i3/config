@@ -274,18 +274,18 @@ for_window [class="Blueman-manager"] resize set 800 600
 for_window [class="Blueman-manager"] move position center
 
 #Rythmbox
-exec --no-startup-id rhythmbox
-for_window [class="Rhythmbox"] move scratchpad
-for_window [class="Rhythmbox"] floating enable
-for_window [class="Rhythmbox"] resize set 1250 700
-bindsym $mod+p [class="Rhythmbox"] scratchpad show; [class="Rhythmbox"] move position center
+exec --no-startup-id sublime-music
+for_window [class="Sublime-music"] move scratchpad
+for_window [class="Sublime-music"] floating enable
+for_window [class="Sublime-music"] resize set 1250 700
+bindsym $mod+p [class="Sublime-music"] scratchpad show; [class="Sublime-music"] move position center
 
-#Typora
-exec --no-startup-id typora
-for_window [class="Typora"] move scratchpad
-for_window [class="Typora"] floating enable
-for_window [class="Typora"] resize set 1300 800
-bindsym $mod+n [class="Typora"] scratchpad show; [class="Typora"] move position center
+#marktext
+exec --no-startup-id marktext
+for_window [class="marktext"] move scratchpad
+for_window [class="marktext"] floating enable
+for_window [class="marktext"] resize set 1300 800
+bindsym $mod+n [class="marktext"] scratchpad show; [class="marktext"] move position center
 
 #Clipit
 exec --no-startup-id clipit
