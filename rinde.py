@@ -93,9 +93,9 @@ def Main(): #Main Code of Program
         if RindeInput == "3": #Install Rice
             os.system('sudo pacman -Syu i3-gaps cups cups-pdf avahi gutenprint foomatic-db-gutenprint-ppds papirus-icon-theme wget curl libreoffice-fresh libreoffice-fresh-pl gedit repose zsh firefox thunderbird mpv youtube-dl discord calibre audacity screenkey obs-studio scribus krita rawtherapee htop gtop adapta-gtk-theme syncthing blueman bluez pavucontrol nautilus keepassxc dunst gnome-screenshot udiskie feh alacritty neofetch inkscape gimp xdotool light ttf-bitstream-vera ttf-croscore ttf-dejavu gnu-free-fonts adobe-source-han-sans-jp-fonts  adobe-source-han-serif-jp-fonts otf-ipafont ttf-hanazono ranger lxappearance-gtk3 --needed')
             os.system('yay -S polybar brother-dcpj315w brscan3 clipit cava i3lock-color libinput-gestures picom-git pyinstaller siji-git teams termsyn-font ttf-material-icons-git ttf-ms-fonts waifu2x-ncnn-vulkan-git wd719x-firmware xava-git --needed')
-            os.system('cp -rf ~/.pyRinde/Data/Rice/* ~/.config/*')
+            os.system('cp -rf ~/.pyRinde/Data/Rice/ ~/.config/')
             os.system('mkdir ~/.pyrinde-user')
-            os.system('cp -rf ~/.pyRinde/Data/pyrinde-user-template/* ~/.pyrinde-user/*')
+            os.system('cp -rf ~/.pyRinde/Data/pyrinde-user-template/ ~/.pyrinde-user/')
             os.system('sudo chmod +s /usr/bin/light')
             clear()
             Rinde()
