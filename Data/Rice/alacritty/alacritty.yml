@@ -114,9 +114,6 @@ mouse:
 
   hide_when_typing: false
 
-
-    modifiers: None
-
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 
