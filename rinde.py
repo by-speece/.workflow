@@ -128,7 +128,7 @@ def Main(): #Main Code of Program
             if PatchInput == "3": #Close Laptop Lid Patch
                 os.system('sudo cp -rf ~/.pyRinde/DataPatch/LaptopLid/logind.conf   /etc/systemd/')
         if RindeInput == "6": #Android USB Install
-            os.system('sudo pacman -S android-file-transfer')
+            os.system('sudo pacman -S android-file-transfer gvfs-mtp --needed --noconfirm')
             clear()
             Main()
         if RindeInput == "b": #Back to Main Menu
