@@ -82,6 +82,7 @@ def Main(): #Main Code of Program
         print("3 | Install Rice")
         print("4 | Install Yay-bin")
         print("5 | Patch Menu")
+        print("6 | Android USB MTP")
         GlobalMenu()
         RindeInput = input("Command: ")
         if RindeInput == "1": #Packages Pack
@@ -126,6 +127,10 @@ def Main(): #Main Code of Program
                 Main()
             if PatchInput == "3": #Close Laptop Lid Patch
                 os.system('sudo cp -rf ~/.pyRinde/DataPatch/LaptopLid/logind.conf   /etc/systemd/')
+        if RindeInput == "6": #Android USB Install
+            os.system('sudo pacman -S android-file-transfer')
+            clear()
+            Main()
         if RindeInput == "b": #Back to Main Menu
             Main()
         if RindeInput == "q": #Quit
