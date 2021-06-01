@@ -9,11 +9,11 @@ current = set()
 def clear():
   os.system('clear')
 def Rinde():
-    rinde = pyfiglet.figlet_format("pyRINDE v0.4", font = "slant")
+    rinde = pyfiglet.figlet_format("pyRINDE v2", font = "slant")
     print(rinde)
     print("------------------------------------------------------------")
     print("Author: Szymon 'by-speece' Gałka 2020-2021")
-    print("Codename: Fresh May | Build 22052021 | Version:0.5.4-testing")
+    print("Codename: Fresh May | Build 01062021 | Version:0.5.4-testing")
     print("------------------------------------------------------------")
 def GlobalMenu():
     print("------------------------------------------------------------")
@@ -91,12 +91,14 @@ def Main(): #Main Code of Program
             clear()
             Rinde()
         if RindeInput == "3": #Install Rice
-            os.system('sudo pacman -Syu i3-gaps cups cups-pdf avahi gutenprint foomatic-db-gutenprint-ppds papirus-icon-theme wget curl libreoffice-fresh libreoffice-fresh-pl gedit repose zsh firefox thunderbird mpv youtube-dl filezilla discord calibre audacity screenkey obs-studio scribus krita rawtherapee htop gtop adapta-gtk-theme syncthing blueman bluez pavucontrol nautilus keepassxc dunst gnome-screenshot udiskie feh alacritty neofetch inkscape gimp xdotool light signal-desktop ttf-bitstream-vera ttf-croscore ttf-dejavu gnu-free-fonts adobe-source-han-sans-jp-fonts  adobe-source-han-serif-jp-fonts otf-ipafont ttf-hanazono ranger lxappearance-gtk3 --needed')
-            os.system('yay -S polybar brother-dcpj315w brscan3 clipit i3lock-color libinput-gestures picom-git pyinstaller siji-git teams termsyn-font ttf-material-icons-git ttf-ms-fonts wd719x-firmware sublime-music marktext --needed')
+            os.system('sh ~/.pyRinde/Data/Bash/rice.sh')
+            os.system('yay -S polybar clipit i3lock-color matcha-kde matcha-gtk-theme qogir-icon-theme libinput-gestures picom-git siji-git termsyn-font ttf-material-icons-git ttf-ms-fonts wd719x-firmware sublime-music marktext --needed')
+            os.system('yay -S brother-dcpj315w brscan3 pyinstaller teams')
             os.system('cp -rf ~/.pyRinde/Data/Rice/* ~/.config/')
             os.system('mkdir ~/.pyrinde-user')
             os.system('cp -rf ~/.pyRinde/Data/pyrinde-user-template/* ~/.pyrinde-user/')
             os.system('sudo chmod +s /usr/bin/light')
+            os.system('cp -rf ~/.pyRinde/Data/Rice/* ~/.config/')
             clear()
             Rinde()
         if RindeInput == "4": #Install Yay-bin
