@@ -15,7 +15,7 @@ def Rinde():
     print(rinde)
     print("------------------------------------------------------------")
     print("Author: Szymon 'by-speece' Gałka 2020-2021")
-    print("Codename: Fresh May | Build 01062021 | Version:0.5.4-testing")
+    print("Codename: Fresh May | Build 08062021 | Version:0.6.4-testing")
     print("------------------------------------------------------------")
 
 def GlobalMenu():
@@ -25,60 +25,6 @@ def GlobalMenu():
     print("------------------------------------------------------------")
 
 #Code of Program
-def LaptopLid(): #Laptop Lid
-    clear()
-    Rinde()
-    print("#  | Laptop Lid Settting")
-    print("1  | SET LID ON | 10%")
-    print("2  | SET LID ON | 20%")
-    print("3  | SET LID ON | 30%")
-    print("4  | SET LID ON | 40%")
-    print("5  | SET LID ON | 50%")
-    print("6  | SET LID ON | 60%")
-    print("7  | SET LID ON | 70%")
-    print("8  | SET LID ON | 80%")
-    print("9  | SET LID ON | 90%")
-    print("10 | SET LID ON | 100%")
-    GlobalMenu()
-
-    LaptopLidInput = input("Command: ")
-    if LaptopLidInput == "1": # 10%
-        os.system('light -S 10')
-        LaptopLid()
-    if LaptopLidInput == "2": # 20%
-        os.system('light -S 20')
-        LaptopLid()
-    if LaptopLidInput == "3": # 30%
-        os.system('light -S 30')
-        LaptopLid()
-    if LaptopLidInput == "4": # 40%
-        os.system('light -S 40')
-        LaptopLid()
-    if LaptopLidInput == "5": # 50%
-        os.system('light -S 50')
-        LaptopLid()
-    if LaptopLidInput == "6": # 60%
-        os.system('light -S 60')
-        LaptopLid()
-    if LaptopLidInput == "7": # 70%
-        os.system('light -S 70')
-        LaptopLid()
-    if LaptopLidInput == "8": # 80%
-        os.system('light -S 80')
-        LaptopLid()
-    if LaptopLidInput == "9": # 90%
-        os.system('light -S 90')
-        LaptopLid()
-    if LaptopLidInput == "10": # 100%
-        os.system('light -S 100')
-        LaptopLid()
-    if LaptopLidInput == "B": #Back to Main Menu
-        clear()
-        Main()
-    if LaptopLidInput == "q": # Quit from App
-        exit()
-    else:
-        LaptopLid()
 
 def Main(): #Main Code of Program
     clear()
@@ -87,7 +33,8 @@ def Main(): #Main Code of Program
     print("2 | Install Apps with Configs")
     print("3 | Extra Scripts")
     print("4 | Rinde Settings")
-    print("5 | Power Manager")
+    print("5 | Notebook Manager")
+    print("6 | Power Manager")
     GlobalMenu()
 
     MainInput = input("Command: ")
@@ -151,7 +98,7 @@ def Main(): #Main Code of Program
             Rinde()
         if RindeInput == "3": #Install Rice
             os.system('sh ~/.pyRinde/Data/Bash/rice.sh')
-            os.system('yay -S polybar clipit i3lock-color matcha-kde matcha-gtk-theme qogir-icon-theme libinput-gestures picom-git siji-git termsyn-font ttf-material-icons-git ttf-ms-fonts wd719x-firmware sublime-music marktext --needed')
+            os.system('yay -S polybar clipit i3lock-color libinput-gestures picom-git siji-git termsyn-font ttf-material-icons-git ttf-ms-fonts wd719x-firmware sublime-music marktext-bin --needed')
             os.system('yay -S brother-dcpj315w brscan3 pyinstaller teams')
             os.system('cp -rf ~/.pyRinde/Data/Rice/* ~/.config/')
             os.system('mkdir ~/.pyrinde-user')
@@ -193,22 +140,11 @@ def Main(): #Main Code of Program
             Main()
         if RindeInput == "q": #Quit
             exit()
-    if MainInput == "5": #Power Manager
+    if MainInput == "5": #NotebookManager
+        NotebookMenu()
+    if MainInput == "6": #PowerManager
         clear()
         Rinde()
-        print("# | Power Manager")
-        print("1 | Check Battery Level")
-        print("2 | Laptop Lid Light")
-        GlobalMenu()
-        PowerInput = input("Command: ")
-        if PowerInput  == "1": #Check Battery %
-            print("Your Battery Level is[%]:")
-            os.system('cat /sys/class/power_supply/BAT0/capacity')
-            time.sleep(3)
-            clear()
-            Main()
-        if PowerInput == "2": #Laptop Lid Light
-           LaptopLid() #  Another def with loop
     if MainInput == "b": #Classic Function
         Main()
     if MainInput == "q": #Classic Function
@@ -216,5 +152,82 @@ def Main(): #Main Code of Program
     else: #User is just idiot 
         Main()
 
+######################################################################
+######################################################################
+######################################################################
+def NotebookMenu(): #Laptop Menu
+    clear()
+    Rinde()
+    print("# | Notebook Manager")
+    print("1 | Check Battery Level")
+    print("2 | Laptop Lid Light")
+    GlobalMenu()
+    NotebookInput = input("Command: ")
+    if NotebookInput  == "1": #Check Battery %
+        print("Your Battery Level is[%]:")
+        os.system('cat /sys/class/power_supply/BAT0/capacity')
+        time.sleep(3)
+        clear()
+        NotebookMenu()
+    if NotebookInput == "2": #Laptop Lid Light
+       LaptopLid() #  Another def with loop
+    else:
+        NotebookMenu()
+
+def LaptopLid(): #Laptop Lid
+    clear()
+    Rinde()
+    print("#  | Laptop Lid Settting")
+    print("1  | SET LID ON | 10%")
+    print("2  | SET LID ON | 20%")
+    print("3  | SET LID ON | 30%")
+    print("4  | SET LID ON | 40%")
+    print("5  | SET LID ON | 50%")
+    print("6  | SET LID ON | 60%")
+    print("7  | SET LID ON | 70%")
+    print("8  | SET LID ON | 80%")
+    print("9  | SET LID ON | 90%")
+    print("10 | SET LID ON | 100%")
+    GlobalMenu()
+
+    LaptopLidInput = input("Command: ")
+    if LaptopLidInput == "1": # 10%
+        os.system('light -S 10')
+        LaptopLid()
+    if LaptopLidInput == "2": # 20%
+        os.system('light -S 20')
+        LaptopLid()
+    if LaptopLidInput == "3": # 30%
+        os.system('light -S 30')
+        LaptopLid()
+    if LaptopLidInput == "4": # 40%
+        os.system('light -S 40')
+        LaptopLid()
+    if LaptopLidInput == "5": # 50%
+        os.system('light -S 50')
+        LaptopLid()
+    if LaptopLidInput == "6": # 60%
+        os.system('light -S 60')
+        LaptopLid()
+    if LaptopLidInput == "7": # 70%
+        os.system('light -S 70')
+        LaptopLid()
+    if LaptopLidInput == "8": # 80%
+        os.system('light -S 80')
+        LaptopLid()
+    if LaptopLidInput == "9": # 90%
+        os.system('light -S 90')
+        LaptopLid()
+    if LaptopLidInput == "10": # 100%
+        os.system('light -S 100')
+        LaptopLid()
+    if LaptopLidInput == "B": #Back to Main Menu
+        clear()
+        Main()
+    if LaptopLidInput == "q": # Quit from App
+        exit()
+    else:
+        LaptopLid()
+#########################################################################
 
 Main() #Start
