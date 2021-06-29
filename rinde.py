@@ -13,16 +13,16 @@ def clear():
 def Rinde():
     rinde = pyfiglet.figlet_format("pyRINDE v2", font = "slant")
     print(rinde)
-    print("------------------------------------------------------------")
+    print("-------------------------------------------------------------------")
     print("Author: Szymon 'by-speece' Gałka 2020-2021")
-    print("Codename: Fresh May | Build 08062021 | Version:0.6.4-testing")
-    print("------------------------------------------------------------")
+    print("Codename: Fresh May | Build 17062021 | Version:0.7.1-experimental")
+    print("-------------------------------------------------------------------")
 
 def GlobalMenu():
-    print("------------------------------------------------------------")
+    print("-------------------------------------------------------------------")
     print("b | Back to Main Menu")
     print("q | Quit")
-    print("------------------------------------------------------------")
+    print("-------------------------------------------------------------------")
 
 #Code of Program
 
@@ -31,10 +31,8 @@ def Main(): #Main Code of Program
     Rinde()
     print("1 | Package Manager")
     print("2 | Install Apps with Configs")
-    print("3 | Extra Scripts")
-    print("4 | Rinde Settings")
-    print("5 | Notebook Manager")
-    print("6 | Power Manager")
+    print("3 | Settings Manager")
+    print("4 | Power Manager")
     GlobalMenu()
 
     MainInput = input("Command: ")
@@ -76,18 +74,15 @@ def Main(): #Main Code of Program
             Main()
     if MainInput == "2": #Install apps with configs
         clear()
-    if MainInput == "3": #Extra Scripts
-        clear()
-    if MainInput == "4": #Rinde Settings
+    if MainInput == "3": #Settings Manager
         clear()
         Rinde()
-        print("# | Rinde Settings Menu ")
+        print("# | Settings Menu ")
         print("1 | Packages Pack")
         print("2 | Drivers Pack")
-        print("3 | Install Rice")
-        print("4 | Install Yay-bin")
-        print("5 | Patch Menu")
-        print("6 | Android USB MTP")
+        print("3 | Install Rice[You need Yay]")
+        print("4 | Install Yay[Binary]")
+        print("5 | Install Yay[From Code]")
         GlobalMenu()
         RindeInput = input("Command: ")
         if RindeInput == "1": #Packages Pack
@@ -98,8 +93,6 @@ def Main(): #Main Code of Program
             Rinde()
         if RindeInput == "3": #Install Rice
             os.system('sh ~/.pyRinde/Data/Bash/rice.sh')
-            os.system('yay -S polybar clipit i3lock-color libinput-gestures picom-git siji-git termsyn-font ttf-material-icons-git ttf-ms-fonts wd719x-firmware sublime-music marktext-bin --needed')
-            os.system('yay -S brother-dcpj315w brscan3 pyinstaller teams')
             os.system('cp -rf ~/.pyRinde/Data/Rice/* ~/.config/')
             os.system('mkdir ~/.pyrinde-user')
             os.system('cp -rf ~/.pyRinde/Data/pyrinde-user-template/* ~/.pyrinde-user/')
@@ -107,35 +100,15 @@ def Main(): #Main Code of Program
             os.system('cp -rf ~/.pyRinde/Data/Rice/* ~/.config/')
             clear()
             Rinde()
-        if RindeInput == "4": #Install Yay-bin
+        if RindeInput == "4": #Install Yay[Binary]
             os.system('sh Data/Bash/yay-bin.sh')
             clear()
             Rinde()
-        if RindeInput == "5": #Patch Menu
+        if RindeInput == "5": #Install Yay[From Code]
+            os.system('sh Data/Bash/yay-compile.sh')
             clear()
             Rinde()
-            print("# | Rinde Patch Menu ")
-            print("1 | RTL8821CE Patch")
-            print("2 | NoBeep Patch")
-            print("3 | Close Laptop Lid no suspend")
-            GlobalMenu()
-            PatchInput = input("Command: ")
-            if PatchInput == "1": #RTL8821CE Patch
-                os.system('sudo cp -rf ~/.pyRinde/DataPatch/RTL8821CE/rtw88_blacklist.conf /etc/modprobe.d')
-                os.system('sudo pacman -Syu dkms linux-headers --needed --noconfirm')
-                os.system('yay -S rtl8821ce-dkms-git')
-                clear()
-                Main()
-            if PatchInput == "2": #NoBeep Patch
-                os.system('sudo cp -rf ~/.pyRinde/DataPatch/NoBeep/nobeep.conf  /etc/modprobe.d')
-                clear()
-                Main()
-            if PatchInput == "3": #Close Laptop Lid Patch
-                os.system('sudo cp -rf ~/.pyRinde/DataPatch/LaptopLid/logind.conf   /etc/systemd/')
-        if RindeInput == "6": #Android USB Install
-            os.system('sudo pacman -S android-file-transfer gvfs-mtp --needed --noconfirm')
-            clear()
-            Main()
+        
         if RindeInput == "b": #Back to Main Menu
             Main()
         if RindeInput == "q": #Quit
@@ -161,6 +134,10 @@ def NotebookMenu(): #Laptop Menu
     print("# | Notebook Manager")
     print("1 | Check Battery Level")
     print("2 | Laptop Lid Light")
+    print("3 | No Suspend on close laptop lid(On Battery)")
+    print("4 | Suspend on close laptop lid(On Battery)")
+    print("5 | Turn ON Ultra Energy Saving")
+    print("6 | Turn OFF Ultra Energy Saving")
     GlobalMenu()
     NotebookInput = input("Command: ")
     if NotebookInput  == "1": #Check Battery %
@@ -171,6 +148,19 @@ def NotebookMenu(): #Laptop Menu
         NotebookMenu()
     if NotebookInput == "2": #Laptop Lid Light
        LaptopLid() #  Another def with loop
+    if NotebookInput == "3": #No Suspend on Closed Lid on Battery
+        os.system('sudo cp -rf ~/.pyRinde/Data/NotebookManager/NoSuspend/logind.conf   /etc/systemd/')
+    if NotebookInput == "4": #Suspend on Closed Lid on Battery
+        os.system('sudo cp -rf ~/.pyRinde/Data/NotebookManager/Suspend/logind.conf   /etc/systemd/')
+    if NotebookInput == "5": #Turn ON Ultra Energy Sabing
+        os.system('sudo systemctl stop syncthing@$USER NetworkManager ')
+    if NotebookInput == "6": #Turn OFF Ultra Energy Saving
+        os.system('sudo systemctl start syncthing@$USER NetworkManager')
+    if NotebookInput == "b": #Back to Main Menu
+        clear()
+        Main()
+    if NotebookInput == "q": # Quit from App
+        exit()
     else:
         NotebookMenu()
 
@@ -221,7 +211,7 @@ def LaptopLid(): #Laptop Lid
     if LaptopLidInput == "10": # 100%
         os.system('light -S 100')
         LaptopLid()
-    if LaptopLidInput == "B": #Back to Main Menu
+    if LaptopLidInput == "b": #Back to Main Menu
         clear()
         Main()
     if LaptopLidInput == "q": # Quit from App
@@ -229,5 +219,7 @@ def LaptopLid(): #Laptop Lid
     else:
         LaptopLid()
 #########################################################################
+
+
 
 Main() #Start

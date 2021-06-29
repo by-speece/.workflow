@@ -1,0 +1,19 @@
+if RindeInput == "5": #Patch Menu
+        clear()
+        Rinde()
+        print("# | Rinde Patch Menu ")
+        print("1 | RTL8821CE Patch")
+        print("2 | NoBeep Patch")
+           
+        GlobalMenu()
+        PatchInput = input("Command: ")
+        if PatchInput == "1": #RTL8821CE Patch
+            os.system('sudo cp -rf ~/.pyRinde/DataPatch/RTL8821CE/rtw88_blacklist.conf /etc/modprobe.d')
+            os.system('sudo pacman -Syu dkms linux-headers --needed --noconfirm')
+            os.system('yay -S rtl8821ce-dkms-git')
+            clear()
+            Main()
+        if PatchInput == "2": #NoBeep Patch
+            os.system('sudo cp -rf ~/.pyRinde/DataPatch/NoBeep/nobeep.conf  /etc/modprobe.d')
+            clear()
+            Main()
