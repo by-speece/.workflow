@@ -1,2 +1,3 @@
-feh --bg-scale ~/.pyrinde/wallpaper/wallpaper.png
-sh ~/.pyrinde/suckless-scripts/dwm-bar.sh
+setxkbmap pl
+feh --bg-scale ~/.workflow/wallpaper/wallpaper.png
+sh ~/.workflow/suckless-scripts/dwm-bar.sh
