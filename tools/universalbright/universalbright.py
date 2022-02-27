@@ -1,8 +1,9 @@
-#Brightness CLI - Simple script to manage brighness from terminal
-#Only work with amd for this time
+# Universal Bright for DWM
+# Only work with amd for this time
 # By Aiden Speece - Szymon Galka
 import os.path
 import os
+import sys
 
 amd_path = '/sys/class/backlight/amdgpu_bl0/' 
 
@@ -27,3 +28,5 @@ def Main():
 
 
 Main()
+
+

@@ -5,8 +5,8 @@ static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Terminus:size=13" };
-static const char dmenufont[]       = "Terminus:size=15";
+static const char *fonts[]          = { "Terminus:size=14" };
+static const char dmenufont[]       = "Terminus:size=17";
 // Background
 static const char col_gray1[]       = "#0C050E";
 // inactive window border color
@@ -70,7 +70,10 @@ static const char *termcmd[]  = { "st", NULL };
 /* Volume keys */
 static const char *upvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", NULL }; 
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL }; 
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL }; 
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL };
+/* Universal Brightness Control */
+static const char *upbright[] = {"python", ".workflow/tools/universalbright/up.py", NULL };
+static const char *downbright[] = {"python", ".workflow/tools/universalbright/down.py", NULL };
 
 
 static Key keys[] = {
@@ -112,6 +115,9 @@ static Key keys[] = {
 	{ 0, 				XF86XK_AudioRaiseVolume, spawn,		{.v = upvol} },
 	{ 0,              		XF86XK_AudioLowerVolume, spawn,		{.v = downvol} },
 	{ 0,				XF86XK_AudioMute,        spawn,         {.v = mutevol} },
+	/*-------------------------------Brightness------------------------------*/
+	{ 0,				XF86XK_MonBrightnessUp,  spawn,		{.v = upbright}	}, 
+	{ 0,				XF86XK_MonBrightnessDown, spawn,	{.v = downbright} },
 };
 
 /* button definitions */

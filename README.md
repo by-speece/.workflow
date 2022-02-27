@@ -2,8 +2,8 @@
 Python Rinde is not desktop Environment - Workflow
 Zbiór skryptów i konfiguracji narzędzi suckless, których używam na codzie
 # Pakiety:
-- Terminus
-- Feh 
+- terminus-font
+- feh 
 - python
 
 
