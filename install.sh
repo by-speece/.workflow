@@ -47,5 +47,5 @@ sh ~/.workflow/modules/universalbright/install/install.sh
 
 #CZYSZCZENIE
 echo Czyszczenie
-rm -rf ~/go
+sudo rm -rf ~/go
 clear
