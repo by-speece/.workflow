@@ -1,0 +1,13 @@
+[Unit]
+Discription=Universal Brightness Service
+After=network.taget
+StartLimitIntervalSec=10
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+ExecStart=/bin/bash /etc/universalbright/script.sh
+
+[Install]
+WantedBy=multi-user.target
