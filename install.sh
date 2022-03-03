@@ -1,11 +1,17 @@
 # Packages install
-sudo pacman -Syu terminus-font feh python base-devel go xdg-users-dirs --no-confirm --needed
+sudo pacman -Syu terminus-font feh python base-devel go xdg-users-dirs zsh --no-confirm --needed
 sudo pacman -Syu cmus syncthing vim odt2txt poppler ueberzug ffmpegthumbnailer highlight mediainfo --no-confirm --needed
 sudo systemctl enable syncthing@$USER 
-
+go env -w GOPATH=$HOME/.go
+clear 
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+clear
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions\
 clear
 # Copy dotfiles
 cp -rf ~/.workflow/dotfiles/. ~/
+source ~/.bashrc
+source ~/.zshrc
 clear
 # Install universalbright
 sh ~/.workflow/modules/universalbright
@@ -50,5 +56,4 @@ sh ~/.workflow/modules/universalbright/install/install.sh
 
 #CZYSZCZENIE
 echo Czyszczenie
-sudo rm -rf ~/go
 clear
