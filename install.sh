@@ -1,5 +1,8 @@
 # Packages install
-sudo pacman -Syu terminus-font feh python base-devel go cmus --no-confirm --needed
+sudo pacman -Syu terminus-font feh python base-devel go xdg-users-dirs --no-confirm --needed
+sudo pacman -Syu cmus syncthing vim odt2txt poppler ueberzug ffmpegthumbnailer highlight mediainfo --no-confirm --needed
+sudo systemctl enable syncthing@$USER 
+
 clear
 # Copy dotfiles
 cp -rf ~/.workflow/dotfiles/. ~/
