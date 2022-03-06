@@ -93,50 +93,40 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-/* Terminal colors (16 first used in escape sequence) */
-static const char *colorname[] = {
+const char *colorname[] = {
 
   /* 8 normal colors */
-  [0] = "#150a17", /* black   */
-  [1] = "#221326", /* red     */
-  [2] = "#38223d", /* green   */
-  [3] = "#56375d", /* yellow  */
-  [4] = "#7c5286", /* blue    */
-  [5] = "#a972b7", /* magenta */
-  [6] = "#c7a6d1", /* cyan    */
-  [7] = "#eadfee", /* white   */
+  [0] = "#040404", /* black   */
+  [1] = "#4e360b", /* red     */
+  [2] = "#634610", /* green   */
+  [3] = "#704e0f", /* yellow  */
+  [4] = "#81590e", /* blue    */
+  [5] = "#8d610f", /* magenta */
+  [6] = "#8a631c", /* cyan    */
+  [7] = "#818181", /* white   */
 
   /* 8 bright colors */
-  [8]  = "#6dcfc2", /* black   */
-  [9]  = "#e495a7", /* red     */
-  [10] = "#6fc5b9", /* green   */
-  [11] = "#dc84f1", /* yellow  */
-  [12] = "#dfa8ed", /* blue    */
-  [13] = "#74bd45", /* magenta */
-  [14] = "#54b7f4", /* cyan    */
-  [15] = "#97db75", /* white   */
+  [8]  = "#424242",  /* black   */
+  [9]  = "#69490F",  /* red     */
+  [10] = "#855E16", /* green   */
+  [11] = "#966814", /* yellow  */
+  [12] = "#ff7713", /* blue    */
+  [13] = "#BD8214", /* magenta */
+  [14] = "#B88526", /* cyan    */
+  [15] = "#c0c0c0", /* white   */
 
   /* special colors */
-  [256] = "#0c050e", /* background */
-  [257] = "#E2D2E7", /* foreground */
+  [256] = "#040404", /* background */
+  [257] = "#cc8606", /* foreground */
+  [258] = "#c0c0c0",     /* cursor */
 };
 
-/*
- * Default colors (colorname index)
- * foreground, background, cursor
- */
-unsigned int defaultfg = 257;
-unsigned int defaultbg = 256;
-unsigned int defaultcs = 257;
-static unsigned int defaultrcs = 256;
-
-/*
- * Colors used, when the specific fg == defaultfg. So in reverse mode this
- * will reverse too. Another logic would only make the simple feature too
- * complex.
- */
-static unsigned int defaultitalic = 7;
-static unsigned int defaultunderline = 7;
+/* Default colors (colorname index)
+ * foreground, background, cursor */
+ unsigned int defaultbg = 0;
+ unsigned int defaultfg = 257;
+ unsigned int defaultcs = 258;
+ unsigned int defaultrcs= 258;
 /*
  * Default shape of cursor
  * 2: Block ("█")

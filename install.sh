@@ -1,13 +1,9 @@
 # Packages install
-sudo pacman -Syu terminus-font feh python base-devel go xdg-users-dirs zsh --no-confirm --needed
-sudo pacman -Syu cmus syncthing vim odt2txt poppler ueberzug ffmpegthumbnailer highlight mediainfo --no-confirm --needed
+sudo pacman -Syu terminus-font feh python base-devel go xdg-users-dirs zsh --noconfirm
+sudo pacman -Syu cmus syncthing vim odt2txt poppler w3m feh ranger ffmpegthumbnailer highlight mediainfo glow mpv --noconfirm 
+sudo pacman -Syu noto-fonts-emoji
 sudo systemctl enable syncthing@$USER 
-go env -w GOPATH=$HOME/.go
 clear 
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-clear
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions\
-clear
 # Copy dotfiles
 cp -rf ~/.workflow/dotfiles/. ~/
 source ~/.bashrc
@@ -26,11 +22,6 @@ clear
 echo Kompilowanie DWM
 cd ~/.workflow/to_compile/dwm
 sudo make clean install
-clear
-#GLOW
-echo Kompilowanie GLOW
-cd ~/.workflow/to_compile/glow
-go build
 clear
 #MDP
 echo Kompilowanie MDP
@@ -52,8 +43,18 @@ clear
 #MODUŁY
 #INSTALOWANIE UNIVERSALBRIGHT
 echo instalowanie modyłów
-sh ~/.workflow/modules/universalbright/install/install.sh
+sudo sh ~/.workflow/modules/universalbright/install/install.sh
+
+#YAY
+cd ~
+git clone https://aur.archlinux.org/yay-bin.git
+cd ~/yay-bin
+makepkg -si
 
 #CZYSZCZENIE
 echo Czyszczenie
+rm -rf ~/yay-bin
+#INSTALL AUR PACKAGES
+yay -S yt-dlp
 clear
+

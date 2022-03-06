@@ -7,7 +7,7 @@ StartLimitIntervalSec=10
 Type=simple
 Restart=always
 RestartSec=1
-ExecStart=/bin/bash /etc/universalbright/script.sh
+ExecStart=/bin/bash /etc/universalbright/scripts.sh
 
 [Install]
 WantedBy=multi-user.target
