@@ -1,7 +1,7 @@
 # Packages install
 sudo pacman -Syu terminus-font feh python base-devel go xdg-users-dirs zsh --noconfirm
-sudo pacman -Syu cmus syncthing vim odt2txt poppler w3m feh ranger ffmpegthumbnailer highlight mediainfo glow mpv --noconfirm 
-sudo pacman -Syu noto-fonts-emoji
+sudo pacman -Syu htop cmus syncthing vim odt2txt poppler w3m feh ranger ffmpegthumbnailer highlight mediainfo glow mpv --noconfirm 
+sudo pacman -Syu noto-fonts-emoji ttf-joypixels adobe-source-han-sans-otc-fonts
 sudo systemctl enable syncthing@$USER 
 clear 
 # Copy dotfiles
