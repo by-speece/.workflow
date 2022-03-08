@@ -1,8 +1,14 @@
 # Packages install
-sudo pacman -Syu terminus-font feh python base-devel go xdg-users-dirs zsh --noconfirm
-sudo pacman -Syu htop cmus syncthing vim odt2txt poppler w3m feh ranger ffmpegthumbnailer highlight mediainfo glow mpv --noconfirm 
-sudo pacman -Syu noto-fonts-emoji ttf-joypixels adobe-source-han-sans-otc-fonts
+sudo pacman -Syu terminus-font feh python base-devel go xdg-user-dirs zsh --noconfirm --needed
+sudo pacman -S htop cmus syncthing vim odt2txt poppler ueberzug feh ranger dunst udiskie xclipboard ffmpegthumbnailer highlight mediainfo glow mpv --noconfirm --needed
+sudo pacman -S noto-fonts-emoji ttf-joypixels adobe-source-han-sans-otc-fonts --noconfirm --needed
 sudo systemctl enable syncthing@$USER 
+#GUI TOOLS
+sudo pacman -S pavucontrol firefox --noconfirm --needed
+#File manager
+sudo pacman -S nautilus nautilus-image-converter filemanager-actions file-roller --noconfirm --needed
+#LIBREOFFCIE + GRAPHIC TOOLS
+sudo pacman -S libreoffice-fresh libreoffice-fresh-pl gimp inkscape --noconfirm --needed
 clear 
 # Copy dotfiles
 cp -rf ~/.workflow/dotfiles/. ~/

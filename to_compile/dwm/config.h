@@ -1,20 +1,20 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Terminus:size=14" };
 static const char dmenufont[]       = "Terminus:size=17";
 // Background
-static const char norm_fg[] = "#c0c0c0";
-static const char norm_bg[] = "#040404";
-static const char norm_border[] = "#424242";
+static const char norm_fg[] = "#ff7713";
+static const char norm_bg[] = "#2d2d2d";
+static const char norm_border[] = "#2d2d2d";
 
 static const char sel_fg[] = "#040404";
-static const char sel_bg[] = "#cc8606";
-static const char sel_border[] = "#cc8606";
+static const char sel_bg[] = "#ff7713";
+static const char sel_border[] = "#ff7713";
 
 static const char urg_fg[] = "#c0c0c0";
 static const char urg_bg[] = "#4e360b";
@@ -86,8 +86,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_Up,     focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_Down,   focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_p,      incnmaster,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_i,      incnmaster,     {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_p,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_Right,  setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_Left,   setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
