@@ -1,6 +1,6 @@
 # Packages install
 sudo pacman -Syu terminus-font feh python base-devel go xdg-user-dirs zsh --noconfirm --needed
-sudo pacman -S htop cmus syncthing vim odt2txt poppler ueberzug feh ranger dunst udiskie xclipboard ffmpegthumbnailer highlight mediainfo glow mpv --noconfirm --needed
+sudo pacman -S htop cmus syncthing vim odt2txt poppler ueberzug feh ranger dunst udiskie ffmpegthumbnailer highlight mediainfo glow mpv --noconfirm --needed
 sudo pacman -S noto-fonts-emoji ttf-joypixels adobe-source-han-sans-otc-fonts --noconfirm --needed
 sudo systemctl enable syncthing@$USER 
 #GUI TOOLS
@@ -45,7 +45,14 @@ echo Kompilowanie ST
 cd ~/.workflow/to_compile/st
 sudo make clean install
 clear
-
+#Clipmenu
+sudo pacman -Syu xsel --noconfirm --needed
+cd ~/.workflow/to_compile/clipnotify
+sudo make clean install
+clear
+cd ~/.workflow/to_compile/clipmenu
+sudo make clean install
+clear 
 #MODUŁY
 #INSTALOWANIE UNIVERSALBRIGHT
 echo instalowanie modyłów
