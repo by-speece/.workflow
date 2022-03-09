@@ -1,0 +1,3 @@
+killall udiskie
+killall clipmenud
+

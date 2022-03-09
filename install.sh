@@ -57,6 +57,7 @@ clear
 #INSTALOWANIE UNIVERSALBRIGHT
 echo instalowanie modyłów
 sudo sh ~/.workflow/modules/universalbright/install/install.sh
+systemctl --user import-environment DISPLAY
 
 #YAY
 cd ~
