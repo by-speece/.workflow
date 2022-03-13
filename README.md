@@ -40,5 +40,3 @@ Wszystkie moduły powinny być układane w następujące drzewo plików:
 		- wymagane_pliki_konfiguracyjne  
 
 
-## CMUS
-`:colorscheme dracula-speece`
